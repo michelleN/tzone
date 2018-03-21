@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  http_basic_authenticate_with name: 'user', password: 'password', only: :destroy # todo: replace with devise
   def create
     @tweet = Tweet.find(params[:tweet_id])
     @comment = @tweet.comments.create(comment_params)

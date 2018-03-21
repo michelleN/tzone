@@ -1,4 +1,7 @@
 class TweetsController < ApplicationController
+
+  http_basic_authenticate_with name: 'user', password: 'password',
+    except: [:index, :show] # todo: replace with devise
   def index
     @tweets = Tweet.all
   end
