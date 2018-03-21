@@ -1,0 +1,18 @@
+<h2> Tweet feed </h2>
+<%= link_to 'New Tweet', new_tweet_path %>
+
+<table>
+  <tr>
+    <th>Tweets</th>
+    <th colspan="2"></th>
+  <tr>
+  <% @tweets.each do |tweet| %>
+    <tr>
+      <td><%= tweet.text %></td>
+      <td><%= link_to 'Show', tweet_path(tweet) %></td>
+      <td><%= link_to 'Destroy', tweet_path(tweet), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+
