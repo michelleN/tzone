@@ -16,3 +16,9 @@ TODO:
 * How to run the test suite
 * Services (job queues, cache servers, search engines, etc.)
 * Deployment instructions
+
+------------
+Instructions: (WIP)
+1. helm install stable/mysql --set mysqlUser=root,mysqlAllowEmptyPassword=true,mysqlDatabase=tzone_development --name zeroed-bison
+2. draft up
+3. kubectl exec <pod-name> -- bash -c 'cd /app && RAILS_ENV=development bin/rake db:migrate'
